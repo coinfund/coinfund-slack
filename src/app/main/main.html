@@ -1,33 +1,43 @@
-<div class="container">
-
-  <div>
-    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+<!-- <div class="main">
+  <div class="hero">
+    <a href="http://coinfund.io"><img src="assets/images/coinfund-logo-padded.png" class="logo"/></a>
+    <img src="assets/images/slack.png" class="slack"/>
+  </div>
+  <div class="divider green"></div>
+  <div class="tagline">
+    <h4 class="info">The CoinFund Slack is an open community focusing on blockchain technology research and investments.</h4>
   </div>
 
-  <div class="jumbotron text-center">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p class="animated infinite" ng-class="main.classAnimation">
-      <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
-    </p>
-    <p>
-      With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-    </p>
+  <div class="vspace-2" invites></div>
+
+  <div class="divider orange"></div>
+</div> -->
+
+<div class="main">
+
+  <div class="row hero">
+    <div class="col-xs-12">
+      <a href="http://coinfund.io"><img src="assets/images/coinfund-logo-padded.png" class="logo"/></a>
+      <img src="assets/images/slack.png" class="slack"/>
+    </div>
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-lg-offset-4 col-lg-4 vspace-2">
+      <span class="info">We are an open community for blockchain technology research and investments.</span>
+    </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-        <div class="caption">
-          <h3>{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
-        </div>
-      </div>
+  <div class="jumbotron" invites></div>
+
+  <div class="row appeal">
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-lg-offset-4 col-lg-4">
+      <h3>Support your research community.</h3>
+      <p class="vspace-1">
+        <div>Ether or ERC20:</div>
+        <code>0x2962DE226076CCE421147b5268921eF88cF0069B</code>
+      </p>
+      <p>
+        <div>Bitcoin:</div>
+        <code>1PbXnHek2ZdJNSasAioqLfp917Vez7iY9c</code>
+      </p>
     </div>
   </div>
 

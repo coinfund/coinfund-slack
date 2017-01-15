@@ -1,0 +1,17 @@
+/*
+* @Author: Jake Brukhman
+* @Date:   2017-01-14 22:20:21
+* @Last Modified by:   Jake Brukhman
+* @Last Modified time: 2017-01-14 22:59:12
+*/
+
+input {
+  border: 1px solid red;
+}
+
+.btn, .btn:hover {
+  border-radius: 0;
+  background-color: $color-highlight;
+  color: white;
+  border-color: $color-highlight;
+}

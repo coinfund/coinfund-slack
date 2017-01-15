@@ -1,0 +1,12 @@
+/*
+* @Author: Jake Brukhman
+* @Date:   2017-01-14 21:46:28
+* @Last Modified by:   Jake Brukhman
+* @Last Modified time: 2017-01-14 21:46:30
+*/
+
+@for $i from 1 through 18 {
+  .vspace-#{$i} {
+    margin-top: #{$i}em;
+  }
+}

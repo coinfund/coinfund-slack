@@ -12,19 +12,32 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
 // bower:scss
 // endbower
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+$color-highlight: #14C767;
+
+@font-face {
+  font-family: 'Replica';
+  src: url('/assets/fonts/Replica-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 
-.thumbnail {
-  height: 200px;
+@font-face {
+  font-family: 'Replica';
+  src: url('/assets/fonts/Replica-Light.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
 
-  img.pull-right {
-    width: 50px;
-  }
+@font-face {
+  font-family: 'Replica';
+  src: url('/assets/fonts/Replica-Bold.ttf') format('truetype');
+  font-weight: 1000;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Replica', Arial, sans-serif;
+  font-weight: 100;
 }
 
 /**
