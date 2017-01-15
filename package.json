@@ -1,7 +1,10 @@
 {
   "name": "coinfundSlack",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "connect-modrewrite": "^0.9.0",
+    "gulp-ng-constant": "^2.0.0-2"
+  },
   "scripts": {
     "test": "gulp test"
   },

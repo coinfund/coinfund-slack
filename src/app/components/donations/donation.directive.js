@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-14 23:20:05
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-14 23:49:09
+* @Last Modified time: 2017-01-15 18:57:34
 */
 
 
@@ -27,7 +27,7 @@
     return directive;
 
     /** @ngInject */
-    function DonationCtrl($scope, $log) {
+    function DonationCtrl() {
 
     }
 

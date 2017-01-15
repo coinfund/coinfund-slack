@@ -8,8 +8,10 @@ var browserSync = require('browser-sync');
 var browserSyncSpa = require('browser-sync-spa');
 
 var util = require('util');
+var gutil = require('gulp-util');
 
 var proxyMiddleware = require('http-proxy-middleware');
+var modRewrite  = require('connect-modrewrite');
 
 function browserSyncInit(baseDir, browser) {
   browser = browser === undefined ? 'default' : browser;
@@ -21,9 +23,14 @@ function browserSyncInit(baseDir, browser) {
     };
   }
 
+  var rewriteUrl = config.Config.apiEndpoint + 'api/$1';
+  gutil.log(rewriteUrl);
   var server = {
     baseDir: baseDir,
-    routes: routes
+    routes: routes,
+     middleware: modRewrite([
+      '^/api/(.*)$ ' + rewriteUrl + ' [P]'
+    ])
   };
 
   /*
@@ -38,7 +45,11 @@ function browserSyncInit(baseDir, browser) {
   browserSync.instance = browserSync.init({
     startPath: '/',
     server: server,
-    browser: browser
+    browser: browser,
+    ui: {
+      port: 3002
+    },
+    port: 3001
   });
 }
 
@@ -46,7 +57,7 @@ browserSync.use(browserSyncSpa({
   selector: '[ng-app]'// Only needed for angular apps
 }));
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('serve', ['config', 'watch'], function () {
   browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 });
 
