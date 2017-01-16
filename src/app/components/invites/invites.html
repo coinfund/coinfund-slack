@@ -1,6 +1,7 @@
 <div class="invites">
   <div ng-if="!done && !err">
-    <input class="email" type="text" placeholder="you@yourdomain.com" autofocus="true" ng-model="email"/>
+    <input class="email" type="text" placeholder="you@yourdomain.com" autofocus="true" ng-model="email" ng-keyup="$event.keyCode == 13 && requestInvite()" />
+    <input type="submit" ng-show="false"/>
     <div class="btn btn-warning vspace-1" ng-click="requestInvite()">Request an Invite</div>
   </div>
   <div ng-if="done">
