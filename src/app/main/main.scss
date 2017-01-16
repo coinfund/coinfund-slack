@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-14 21:11:08
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-15 01:02:52
+* @Last Modified time: 2017-01-15 19:29:43
 */
 
 html, body {
@@ -72,6 +72,12 @@ body {
     padding: 0 2em;
   }
 
+  .slackinfo {
+    .online {
+      font-weight: bold;
+      color: darkred;
+    }
+  }
 
 
 

@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-14 21:30:22
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-14 22:11:36
+* @Last Modified time: 2017-01-16 01:05:21
 */
 
 (function() {
@@ -24,8 +24,20 @@
     return directive;
 
     /** @ngInject */
-    function InvitesCtrl($scope, $log) {
-      $log.log('haha', $scope);
+    function InvitesCtrl($scope, $log, $http, Config) {
+      $scope.requestInvite = function() {
+        if (!$scope.email) {
+          $log.log('No email entered.');
+        }
+
+        var ep = Config.apiEndpoint + 'api/slackinvite';
+        $http.post(ep, {email: $scope.email})
+          .then(function(response) {
+            $log.log('response: ', response);
+          }, function(err) {
+            $log.log('err: ', err);
+          });
+      };
     }
 
   }

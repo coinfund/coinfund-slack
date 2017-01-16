@@ -1,34 +1,14 @@
 
-<!-- <div class="main">
-
-  <div class="row hero">
-    <div class="col-xs-12">
-      <a href="http://coinfund.io"><img src="assets/images/coinfund-logo-padded.png" class="logo"/></a>
-      <img src="assets/images/slack.png" class="slack"/>
-    </div>
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-lg-offset-4 col-lg-4 vspace-2">
-      <span class="info">We are an open community for blockchain technology research and investments.</span>
-    </div>
-  </div>
-
-  <div class="jumbotron" invites></div>
-
-  <div class="row appeal">
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-lg-offset-4 col-lg-4">
-      <h3>Support your research community.</h3>
-      <div class="vspace-2">
-        <span donation logo="/assets/images/ethereum.png"></span>
-        <span donation logo="/assets/images/bitcoin.png"></span>
-      </div>
-    </div>
-  </div>
-
-</div> -->
-
 <div class="row main">
   <a href="http://coinfund.io"><img src="assets/images/coinfund-logo-padded.png" class="logo"/></a>
   <img src="assets/images/slack.png" class="slack"/>
   <div class="divider black"></div>
   <div class="info">We are an open community for blockchain technology research and investments.</div>
   <div class="vspace-2" invites></div>
+  <div class="slackinfo vspace-1" ng-if="ctrl.data">
+    <div>
+      <span class="online">{{ctrl.data.users_online}}</span> of <b>{{ctrl.data.users}}</b> members online across <b>{{ctrl.data.channels}}</b> channels.
+    </div>
+    <div ng-if="ctrl.data.most_popular"><b>#{{ctrl.data.most_popular}}</b> is popular, with <b>{{ctrl.data.max_users}}</b> researchers.</div>
+  </div>
 </div>

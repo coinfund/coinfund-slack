@@ -1,21 +1,29 @@
 (function() {
   'use strict';
 
-  angular
-    .module('coinfundSlack')
-    .config(config);
-
   /** @ngInject */
-  function config($logProvider, toastrConfig) {
+  function config($logProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
-    // Set options third-party lib
-    toastrConfig.allowHtml = true;
-    toastrConfig.timeOut = 3000;
-    toastrConfig.positionClass = 'toast-top-right';
-    toastrConfig.preventDuplicates = true;
-    toastrConfig.progressBar = true;
+    // TODO(jbrukh): config
   }
+
+  /** @ngInject */
+  function configRestangular(Config, RestangularProvider) {
+    var url = Config.apiEndpoint;
+    RestangularProvider.setBaseUrl(url);
+  }
+
+  /** @ngInject */
+  function configHtml5($locationProvider) {
+    $locationProvider.html5Mode(true).hashPrefix('!');
+  }
+
+  angular
+    .module('coinfundSlack')
+    .config(config)
+    .config(configHtml5)
+    .config(configRestangular);
 
 })();

@@ -6,8 +6,12 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController() {
-    //var vm = this;
-
+  function MainController(Restangular, $log) {
+    var vm = this;
+    Restangular.one('api/slack').get().then(function(data) {
+      vm.data = data;
+      $log.log(data);
+    });
   }
+
 })();

@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2016-04-03 17:10:55
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-15 18:59:26
+* @Last Modified time: 2017-01-15 19:04:00
 */
 
 'use strict';
@@ -24,7 +24,7 @@ gulp.task('config', function () {
     name: 'coinfundSlack.config',
     constants: config,
     stream: true,
-    wrap: 'commonjs',
+    wrap: false,
   })
   .pipe(gulp.dest('src/app/config'));
 });

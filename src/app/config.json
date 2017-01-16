@@ -1,7 +1,7 @@
 {
   "server": {
     "Config": {
-      "apiEndpoint": "http://coinfund-api.herokuapp.com/"
+      "apiEndpoint": "https://coinfund-api.herokuapp.com/"
     }
   },
   "production": {
