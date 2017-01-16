@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-14 21:30:22
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-16 01:05:21
+* @Last Modified time: 2017-01-16 01:35:44
 */
 
 (function() {
@@ -33,9 +33,9 @@
         var ep = Config.apiEndpoint + 'api/slackinvite';
         $http.post(ep, {email: $scope.email})
           .then(function(response) {
-            $log.log('response: ', response);
+            $scope.done = true;
           }, function(err) {
-            $log.log('err: ', err);
+            $scope.err = err;
           });
       };
     }
