@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2016-04-03 17:10:55
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-15 18:56:17
+* @Last Modified time: 2017-01-15 18:59:26
 */
 
 'use strict';
@@ -21,7 +21,7 @@ global.config = JSON.parse(fs.readFileSync('src/app/config.json', 'utf8'))[env];
 // create the task
 gulp.task('config', function () {
   return ngConstant({
-    name: 'coinfund.config',
+    name: 'coinfundSlack.config',
     constants: config,
     stream: true,
     wrap: 'commonjs',
