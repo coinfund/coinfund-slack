@@ -40,6 +40,10 @@ body {
   font-weight: 100;
 }
 
+[ng-click] {
+  cursor: pointer;
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

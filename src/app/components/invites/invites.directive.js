@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-14 21:30:22
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-16 02:00:22
+* @Last Modified time: 2017-01-16 12:40:16
 */
 
 (function() {
@@ -13,32 +13,48 @@
     .directive('invites', invites);
 
   /** @ngInject */
-  function invites() {
+  function invites($log, $state, $http, Config) {
     var directive = {
       restrict: 'EA',
-      controller: InvitesCtrl,
-      scope: {
-      },
-      templateUrl: 'app/components/invites/invites.html'
+      templateUrl: 'app/components/invites/invites.html',
+      scope: true,
+      link: function(scope) {
+
+        scope.requestInvite = function(email) {
+          $log.log('email', email);
+          if (angular.isUndefined(email)) {
+            $log.log('no email entered');
+            return;
+          }
+
+          var ep = Config.apiEndpoint + 'api/slackinvite';
+          $http.post(ep, {email: email})
+            .then(function() {
+              scope.done = true;
+            }, function(err) {
+              scope.err = err;
+              if (!err.data) {
+                scope.genericError = true;
+                return;
+              }
+              if (!err.data.ok) {
+                if (err.data.err === 'invalid_email') {
+                  scope.invalidEmail = true;
+                } else if (err.data.err === 'already_invited') {
+                  scope.alreadyInvited = true;
+                }
+              }
+            });
+        };
+
+        scope.tryAgain = function() {
+          $state.reload();
+        };
+
+
+      }
     };
     return directive;
-
-    /** @ngInject */
-    function InvitesCtrl($scope, $log, $http, Config) {
-      $scope.requestInvite = function() {
-        if (!$scope.email) {
-          $log.log('No email entered.');
-        }
-
-        var ep = Config.apiEndpoint + 'api/slackinvite';
-        $http.post(ep, {email: $scope.email})
-          .then(function() {
-            $scope.done = true;
-          }, function(err) {
-            $scope.err = err;
-          });
-      };
-    }
-
   }
+
 })();

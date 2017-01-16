@@ -1,14 +1,15 @@
 <div class="invites">
   <div ng-if="!done && !err">
-    <input class="email" type="text" placeholder="you@yourdomain.com" autofocus="true" ng-model="email" ng-keyup="$event.keyCode == 13 && requestInvite()" />
-    <input type="submit" ng-show="false"/>
-    <div class="btn btn-warning vspace-1" ng-click="requestInvite()">Request an Invite</div>
+    <input class="email" type="text" placeholder="you@yourdomain.com" autofocus="true" ng-model="email" ng-keyup="$event.keyCode == 13 && requestInvite(email)" />
+    <div class="btn btn-warning vspace-1" ng-click="requestInvite(email)">Request an Invite</div>
   </div>
-  <div ng-if="done">
+  <div ng-show="done">
     <h4>Your email has been submitted.</h4>
   </div>
-  <div ng-if="err">
-    <h4>There was a problem submitting your email. Please contact <a href="mailto:info@coinfund.io">info@coinfund.io</a>.</h4>
+  <div ng-show="err">
+    <h4 ng-show='genericError'>There was a problem submitting your email. Please contact <a href="mailto:info@coinfund.io">info@coinfund.io</a>.</h4>
+    <h4 ng-show='alreadyInvited'>The email {{email}} has already been invited. <a ng-click="tryAgain()">Try again.</a></h4>
+    <h4 ng-show='invalidEmail'>The email {{email}} is invalid. <a ng-click="tryAgain()">Try again.</a></h4>
   </div>
 
 </div>
