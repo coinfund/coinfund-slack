@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-22 14:41:57
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-22 15:00:24
+* @Last Modified time: 2017-01-22 15:06:11
 */
 .channels-list {
   .title {
@@ -12,6 +12,10 @@
     table {
       margin: 1em 0;
       tr td:first-child {
+        font-weight: 500;
+        color: $color-highlight;
+      }
+      tr td:nth-child(2) {
         text-align: left;
         font-weight: bold;
       }
