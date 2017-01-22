@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-14 21:11:08
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-16 02:14:07
+* @Last Modified time: 2017-01-22 14:20:23
 */
 
 html, body {
@@ -15,6 +15,10 @@ body {
   background-position: center-top;
   @media (max-width: $screen-sm-max) {
     background-size: contain;
+  }
+  @media (min-width: $screen-sm-max) {
+    background-color: white;
+    background-image: none;
   }
 }
 
