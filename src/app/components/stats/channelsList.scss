@@ -1,0 +1,26 @@
+/*
+* @Author: Jake Brukhman
+* @Date:   2017-01-22 14:41:57
+* @Last Modified by:   Jake Brukhman
+* @Last Modified time: 2017-01-22 14:51:23
+*/
+.channels-list {
+  .title {
+    text-align: center;
+  }
+  table {
+    margin: 1em auto;
+    width: 50%;
+    tr td:first-child {
+      text-align: left;
+      font-weight: bold;
+    }
+    tr td:last-child {
+      text-align: right;
+    }
+    tr:last-child td {
+      padding: 1em 0;
+      text-align: center;
+    }
+  }
+}

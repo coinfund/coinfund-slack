@@ -1,0 +1,12 @@
+<div class="channels-list">
+  <h3 class="title">Top Research Channels</h3>
+  <table class="table">
+    <tr ng-repeat="ch in channelsData.channels | limitTo: 10">
+      <td class="channel-name">#{{ch.name}}</td>
+      <td>{{ch.members}} researchers</td>
+    </tr>
+    <tr>
+      <td colspan="2"><a ui-sref="home">BACK</a></td>
+    </tr>
+  </table>
+</div>
