@@ -2,11 +2,15 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-22 14:41:57
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-22 15:06:11
+* @Last Modified time: 2017-01-22 15:16:09
 */
 .channels-list {
+  @media (max-width: $screen-xs-max) {
+    font-size: .95em;
+  }
   .title {
     text-align: center;
+    color: $color-highlight;
   }
   .cont {
     table {
