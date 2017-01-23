@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-14 21:11:08
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-22 14:53:10
+* @Last Modified time: 2017-01-22 19:17:02
 */
 
 html, body {
@@ -30,6 +30,9 @@ body {
     display: inline-block;
     font-weight: bold;
     padding: 1em 0;
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
   }
 
   @media (min-width: $screen-sm-max) {
