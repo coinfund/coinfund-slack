@@ -1,0 +1,35 @@
+/*
+* @Author: Jake Brukhman
+* @Date:   2017-01-22 14:41:57
+* @Last Modified by:   Jake Brukhman
+* @Last Modified time: 2017-01-22 19:07:46
+*/
+.tips-list {
+  @media (max-width: $screen-xs-max) {
+    font-size: .95em;
+  }
+  .title {
+    text-align: center;
+    color: $color-highlight;
+  }
+  .cont {
+    table {
+      margin: 1em 0;
+      tr td:first-child {
+        font-weight: 500;
+        color: $color-highlight;
+      }
+      tr td:nth-child(2) {
+        text-align: left;
+        font-weight: bold;
+      }
+      tr td:nth-child(3), td:last-child {
+        text-align: right;
+      }
+      tr:last-child td {
+        padding: 1em 0;
+        text-align: center;
+      }
+    }
+  }
+}

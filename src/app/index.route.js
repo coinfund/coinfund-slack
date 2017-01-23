@@ -20,6 +20,12 @@
         controller: 'StatsController',
         controllerAs: 'ctrl'
       })
+      .state('tips', {
+        url: '/tips',
+        templateUrl: 'app/components/tips/tips.html',
+        controller: 'TipsController',
+        controllerAs: 'ctrl'
+      });
 
     $urlRouterProvider.otherwise('/');
   }
