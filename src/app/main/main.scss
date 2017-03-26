@@ -2,7 +2,7 @@
 * @Author: Jake Brukhman
 * @Date:   2017-01-14 21:11:08
 * @Last Modified by:   Jake Brukhman
-* @Last Modified time: 2017-01-22 19:17:02
+* @Last Modified time: 2017-03-26 14:14:15
 */
 
 html, body {
@@ -80,6 +80,8 @@ body {
     font-weight: lighter;
     line-height: 1.25em;
     padding: 0 3em;
+    max-width: 80%;
+    margin: 0 auto;
   }
 
   .slackinfo {
@@ -88,9 +90,12 @@ body {
       color: darkred;
     }
   }
+}
 
-
-
+@media only screen and (max-width: 768px) {
+  .main .info {
+    max-width: 100%;
+  }
 }
 
 // .main {
